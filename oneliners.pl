@@ -79,7 +79,7 @@ sub cmd_list {
     my $dir_path = $opts{dir_path};
     opendir(my $dh, $dir_path) or die "list: $!";
     my $count = 0;
-    for my $file (readdir $dh) {
+    while (my $file = readdir $dh) {
         next unless $file =~ /\.json$/;
         say $file;
         $count++;
