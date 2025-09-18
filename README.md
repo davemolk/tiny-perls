@@ -1,11 +1,17 @@
 # tiny-perls
 various perl scripts
 
-## no space
+## extract_md_code
+extract code blocks from markdown docs. optional filter on language.
+
+## lobsters
+client for lobste.rs.
+
+## nospace
 remove spaces from the contents of a given directory. 
 operates on current directory if none is provided.
 
-## one liners
+## oneliners
 save, retrieve, and run your perl one-liners.
 
 ## sl
