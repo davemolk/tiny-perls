@@ -7,6 +7,9 @@ extract code blocks from markdown docs. optional filter on language.
 ## lobsters
 client for lobste.rs.
 
+## newperl
+create a basic template for a new perl script.
+
 ## nospace
 remove spaces from the contents of a given directory. 
 operates on current directory if none is provided.
@@ -17,3 +20,6 @@ save, retrieve, and run your perl one-liners.
 ## sl
 because you shouldn't have to complete captchas just to
 see the school lunch menu...
+
+## todofinder
+find todos in files
