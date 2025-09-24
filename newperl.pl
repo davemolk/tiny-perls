@@ -7,10 +7,8 @@ use feature 'say';
 
 sub usage {
     my ($exit) = @_;
-
     say << "USAGE";
-usage: $0 <name> 
-
+usage: $0 <name>
 create a basic perl script template
 USAGE
     exit $exit;
