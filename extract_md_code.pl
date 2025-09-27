@@ -5,14 +5,14 @@ use warnings;
 use feature 'say';
 use autodie;
 use Getopt::Long;
-
+use File::Basename;
 
 sub usage {
     my ($exit) = @_;
+    my $prog = basename($0);
 
+    say "usage: $prog [options]\n";
     say << "USAGE";
-usage: $0 [options] 
-
 extract code from markdown. reads stdin or a file
 
 options:

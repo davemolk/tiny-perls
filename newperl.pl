@@ -4,17 +4,19 @@ use strict;
 use warnings;
 use autodie;
 use feature 'say';
+use File::Basename;
 
 sub usage {
     my ($exit) = @_;
-    say << "USAGE";
-usage: $0 <name>
-create a basic perl script template
-USAGE
+    my $prog = basename($0);
+
+    say "usage: $prog <name>\n";
+    say "create a basic perl script template";
     exit $exit;
 }
 
 my $name = shift or usage(1);
+usage(0) if lc $name eq '-h' || lc $name eq '--help';
 $name =~ s/\.pl$//i;
 
 my @lines = (

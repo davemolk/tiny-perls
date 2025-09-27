@@ -7,14 +7,15 @@ use autodie qw(:all);
 use Time::Piece;
 use Getopt::Long;
 use File::Copy;
+use File::Basename;
 use File::Spec::Functions qw(catfile catdir);
 
 sub usage {
     my ($exit) = @_;
+    my $prog = basename($0);
 
+    say "usage: $prog [options]\n"; 
     say << "USAGE";
-usage: $0 [options] 
-
 move files in a directory to a backup folder (formatted as iso8601.bak)
 
 options:

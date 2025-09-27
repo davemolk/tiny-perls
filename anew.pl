@@ -6,13 +6,14 @@ use strict;
 use warnings;
 use feature 'say';
 use Getopt::Long;
+use File::Basename;
 
 sub usage {
     my ($exit) = @_;
+    my $prog = basename($0);
 
+    say "usage: $prog [file]\n";
     say << "USAGE";
-usage: $0 [file]
-
 appends lines from stdin to a file if they aren't already
 there and also sends the lines to stdout.
 

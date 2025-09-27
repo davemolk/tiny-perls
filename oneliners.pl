@@ -7,13 +7,14 @@ use JSON;
 use Getopt::Long;
 use File::Spec::Functions;
 use File::Path qw(make_path);
+use File::Basename;
 
 sub usage {
     my ($exit) = @_;
-
+    my $prog = basename($0);
+    
+    say "usage: $prog <command> [options]\n";
     say << "USAGE";
-usage: $0 <command> [options] 
-
 run your saved your perl one-liners
 
 commands:

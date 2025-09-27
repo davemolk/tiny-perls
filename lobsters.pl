@@ -6,15 +6,14 @@ use feature 'say';
 use JSON;
 use HTTP::Tiny;
 use autodie;
+use File::Basename;
 
 sub usage {
     my ($exit) = @_;
+    my $prog = basename($0);
 
-    say << "USAGE";
-usage: $0 [option] 
-
-get newest feed from lobste.rs. use "hot" argument for hottest.
-USAGE
+    say "usage: $prog [option]\n";
+    say "get newest feed from lobste.rs. use 'hot' argument for hottest.";
     exit $exit;
 }
 

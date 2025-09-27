@@ -5,13 +5,14 @@ use warnings;
 use feature 'say';
 use Getopt::Long;
 use File::Spec::Functions qw(catfile);
+use File::Basename;
 
 sub usage {
     my ($exit) = @_;
+    my $prog = basename($0);
 
+    say "usage: $prog [options] [dir]\n";
     say << "USAGE";
-usage: $0 [options] [dir]
-
 remove spaces from the contents of a given directory. 
 operates on current directory if none is provided.
 
