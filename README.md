@@ -33,6 +33,9 @@ search phish.in API v2 for songs or shows. choose to listen or download.
 ## ppj
 pretty print json
 
+## sad
+seek and destroy (files)
+
 ## sl
 because you shouldn't have to complete captchas just to
 see the school lunch menu...
