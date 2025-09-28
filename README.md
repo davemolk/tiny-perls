@@ -42,3 +42,6 @@ see the school lunch menu...
 
 ## todofinder
 find todos in files
+
+## tojson
+turn stdin into json
