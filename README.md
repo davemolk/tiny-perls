@@ -27,6 +27,9 @@ operates on current directory if none is provided.
 ## oneliners
 save, retrieve, and run your perl one-liners.
 
+## olp
+practice your one-liners
+
 ## phish
 search phish.in API v2 for songs or shows. choose to listen or download.
 

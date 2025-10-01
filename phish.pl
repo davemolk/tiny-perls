@@ -83,6 +83,8 @@ if (exists $commands{$cmd}) {
         http => $http,
         dir => $dir,
     );
+} else {
+    usage(1);
 }
 
 sub get_tracks {
