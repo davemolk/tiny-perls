@@ -12,6 +12,7 @@ use File::Basename;
 
 sub usage {
     my ($exit) = @_;
+    $exit = 0 unless $exit;
     my $prog = basename($0);
     
     say "usage: $prog <command> [options]\n";
@@ -56,13 +57,13 @@ my %commands = (
     song => \&get_tracks,
     shows => \&get_shows,
     show => \&get_show,
-    help => \&usage,
     listen => \&handle_listen,
     download => \&handle_download,
 );
 
 my $cmd = shift @ARGV;
 usage(1) unless $cmd;
+usage (0) if $cmd eq 'help';
 
 $dir = catfile($ENV{HOME},"/Desktop", "phish") unless defined $dir;
 if ($cmd eq "download") {

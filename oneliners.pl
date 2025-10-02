@@ -43,11 +43,11 @@ my %commands = (
     save => \&cmd_save,
     delete => \&cmd_delete,
     list => \&cmd_list,
-    help => \&usage,
 );
 
 my $cmd = shift @ARGV;
 usage(1) unless $cmd;
+usage(0) if $cmd eq 'help';
 
 my $dir_path = catfile($ENV{"HOME"}, ".oneliners");
 make_path($dir_path) unless (-d $dir_path);
