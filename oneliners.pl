@@ -15,11 +15,11 @@ sub usage {
     
     say "usage: $prog <command> [options]\n";
     say << "USAGE";
-run your saved your perl one-liners
+run your saved perl one-liners
 
 commands:
     list                            list one-liners by name
-    save <name> <cmd> [-f,--flags]  save one-liner
+    save <name> <cmd> [-f,--flags]  save a one-liner
     delete <name>                   delete 
     <name>                          run saved command
     help                            show this help
@@ -82,7 +82,8 @@ sub cmd_list {
     my $count = 0;
     while (my $file = readdir $dh) {
         next unless $file =~ /\.json$/;
-        say $file;
+        $file =~ s/(.*)\.json$/$1/;
+        say $1;
         $count++;
     }
     closedir $dh;

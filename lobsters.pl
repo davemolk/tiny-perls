@@ -27,7 +27,7 @@ my $url = ($ARGV[0] && $ARGV[0] =~ /hot/i) ? $hottest : $newest;
 sub request {
     my ($url) = @_;
     
-    my $ua = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:133.0) Gecko/20100101 Firefox/133.0";
+    my $ua = "github.com/davemolk/tiny-perls";
     my $http = HTTP::Tiny->new(
         "agent" => $ua,
     );
