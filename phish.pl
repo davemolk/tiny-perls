@@ -25,6 +25,7 @@ commands:
     show     <YYYY-MM-DD>       get info for a show
     listen   <YYYY-MM-DD|id>    listen to a track (provide id) or a show (provide date), opens browser
     download <YYYY-MM-DD|id>    (use date for show, track id for track)
+    news                        get recent announcements from the site
     help                        show this help
 
 options:
@@ -59,6 +60,7 @@ my %commands = (
     show => \&get_show,
     listen => \&handle_listen,
     download => \&handle_download,
+    news => \&news,
 );
 
 my $cmd = shift @ARGV;
@@ -86,6 +88,20 @@ if (exists $commands{$cmd}) {
     );
 } else {
     usage(1);
+}
+
+sub news {
+    my (%opts) = @_;
+    my $http = $opts{http};
+    my $url = "https://phish.in/api/v2/announcements";
+    my $res = request($http, $url);   
+    my $ref = decode_json($res);
+    foreach my $item (@{ $ref }) {
+        say $item->{title};
+        say $item->{description};
+        say $item->{url};
+        say "";
+    }
 }
 
 sub get_tracks {

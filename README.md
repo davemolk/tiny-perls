@@ -10,8 +10,17 @@ appends lines from stdin to a file if they aren't already there and also sends t
 ## archive
 move files in a directory to a backup folder (formatted as iso8601.bak)
 
+## comments
+extract comments from code
+
+## dd
+quick down detector
+
 ## extract_md_code
 extract code blocks from markdown docs. optional filter on language
+
+## jp
+search json by key, value, or both. run without argument to pretty-print input.
 
 ## lobsters
 client for lobste.rs
@@ -22,11 +31,11 @@ create a basic template for a new perl script
 ## nospace
 remove spaces from the contents of a given directory. operates on current directory if none is provided
 
-## oneliners
-save, retrieve, and run your perl one-liners
-
 ## olp
 practice your one-liners
+
+## oneliners
+save, retrieve, and run your perl one-liners
 
 ## phish
 search phish.in API v2 for songs or shows. choose to listen or download
