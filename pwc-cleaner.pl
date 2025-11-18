@@ -17,17 +17,20 @@ opendir(my $dh, $target_dir);
 my @contributors = sort readdir $dh;
 foreach my $contributor (@contributors) {
   next if $contributor eq '.' or $contributor eq '..';
-  opendir(my $ch, catfile($target_dir, $contributor));
-  my @files = sort readdir $ch;
+
+  my $contrib_path = catfile($target_dir, $contributor);
+  next unless -d $contrib_path;
+  
+  opendir(my $ch, $contrib_path);
+  my @files = grep { $_ ne '.' && $_ ne '..' } sort readdir $ch;
+
   say $contributor if defined $lang && grep { /$lang/i } @files;
 
   # template is just a readme, plus . and ..
-  next unless scalar @files == 3;
-  next if grep { -d $_ } @files;
+  next if grep { -d catfile($contrib_path, $_) } @files;
+  next unless scalar @files == 1;
   
-  my $full_path = catfile($target_dir, $contributor);
-  
-  remove_tree($full_path, {
+  remove_tree($contrib_path, {
     verbose => 1,
     safe => 1,
   });

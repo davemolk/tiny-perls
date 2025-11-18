@@ -43,6 +43,9 @@ search phish.in API v2 for songs or shows. choose to listen or download
 ## ppj
 pretty print json
 
+## pwc-cleaner
+helper for https://theweeklychallenge.org/, removes empty dirs for challenges and searches for solutions by language
+
 ## sad
 seek and destroy (files/dirs) => sought and destroyed (files/dirs)
 
